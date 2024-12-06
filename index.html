@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./GDZ.png" type="image/x-icon">
+    <title>GDZ Payment</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .fruit {
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+    size: 50px;
+    grid-gap: 20px;
+
+    /* background-color: aqua; */
+    /* grid-gap: 10px; */
+
+}
+.item1 {
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+
+    /* grid-row-start: 1; 
+    grid-row-end: 3; or */
+    grid-row: 1/2;
+}
+.item2 {
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+.item3{
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+    grid-row: 3/4;
+    /* order: 5; */
+
+}
+.item4 {
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+    grid-row: 1/2;
+
+}
+.item5 {
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+    grid-row: 2/3;
+    justify-self: start;
+
+}
+.item6 {
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+    grid-row: 3/4;
+    align-self: center;
+
+}
+.item7 {
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+    grid-row: 1/2;
+
+}
+
+
+.item9 {
+    /* border: solid red;
+    background-color: rgb(255, 208, 0); */
+    grid-row: 3/4;
+
+}
+    </style>
+</head>
+<body style="background-color:  #8dcea6;;">
+    <h2 >
+    
+    <div id="payment-container" type="button" onclick="payment()">
+        <label>
+            <button id="actionButton" disabled>
+                 <input type="checkbox" id="toggleCheckbox" onchange="toggleButton()" />  
+                 <a href="http://" target="_blank" rel="noopener noreferrer">I agree to the terms and conditions</a>   
+                  <br><br>
+                 <br><a style="font-size: x-large; color: green;" href="#">Process to payment</a></button>
+          </label>
+        
+    </div>
+    
+    
+    <div  id="back-container" style="display: none";>
+        <button  text-align: right;  onclick="back_payment()"><h1><a href="mailto:gulshandigitalzone@gmail.com">Back and send receipt</a></h1></button>
+        <h2><a href="tel:+6299050695"><i class="fa-solid fa-phone-volume"></i>Call</a> <a href="mailto:gulshandigitalzone@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a></h2>
+        
+        <div style="display: flex; text-align: center; font-size: x-large; color: rgb(0, 4, 255); background-color: rgb(121, 197, 202);">
+            <ul style="width: 295px; height: 30px;">49$/Month</ul>
+            <ul style="width: 295px; height: 30px;">99$/6 Month</ul>
+            <ul style="width: 295px; height: 30px;">499$ Life Time <b style="color: rgb(0, 255, 13);">(Popular)</b></ul>
+            <ul style="width: 295px; height: 30px;">Custom Aap apne hisab se le sakte hein.</ul>
+        </div>
+        <div style="display: flex; ">
+            <ul><img style="width: 295px; height: 295px;" src="./49.jpg" alt=""></ul>
+            <ul><img style="width: 295px; height: 295px;" src="./99.jpg" alt=""></ul>
+            <ul><img style="width: 295px; height: 295px;" src="./499.jpg" alt=""></ul>
+            <ul><img style="width: 295px; height: 295px;" src="./customize.jpg" alt=""></ul>
+
+         </div>
+        </h2>
+    <script>
+        function payment() {
+                document.getElementById("payment-container").style.display = "none";
+                document.getElementById("back-container").style.display = "block";
+        }
+    
+        function back_payment() {
+            alert("It is necessary to send the bill.");
+            document.getElementById("payment-container").style.display = "block";
+            document.getElementById("back-container").style.display = "none";
+        }
+    </script>
+    <!-- check box sctipt -->
+     <script>
+        function toggleButton() {
+          const checkbox = document.getElementById("toggleCheckbox");
+          const button = document.getElementById("actionButton");
+          button.disabled = !checkbox.checked;
+        }
+      </script>
+      <p style="color: red;">कृपया ध्यान दें:</p>
+      <ul style="color: blue;">
+          <li>सभी भुगतान अग्रिम में किए जाएंगे।</li>
+          <li>भुगतान के बाद धन वापसी संभव नहीं है।</li>
+          <li>आपके द्वारा दी गई जानकारी पूर्ण और सत्य होनी चाहिए।</li>
+          <li>किसी भी प्रकार की तकनीकी समस्या के लिए, कृपया हमारी सहायता टीम से संपर्क करें।</li>
+      </ul>
+      <p>इन शर्तों को स्वीकार करने के बाद ही भुगतान प्रक्रिया को पूरा करें।</p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nisi animi eos labore iste consequuntu
+      r beatae modi ratione numquam cumque libero iure excepturi ipsa consectetur facilis amet deleniti, tenetur
+       tempora a nemo quasi quam
+       nihil. Voluptatibusme delectus cum impedit ipsa beatae, natus temporibus odit quibusdam eaque nisi corporis. Laudantium sequi ut labore molestias deleniti perspiciatis dolore.
+       Laudantium exercitationem, vero optio est perferendis eligendi ipsum sed? Nulla earum, omnis reprehenderit alias eligendi blanditiis, repellat suscipit ex fugiat animi natus odio similique amet libero iste minima! Corrupti, sed.
+       Ipsam, recusandae neque eos totam, dolores sequi id numquam cum facere facilis ratione porro, quam saepe nobis alias quisquam adipisci optio nihil? Tenetur dicta, ratione voluptatum temporibus dolorum veniam officia!
+       Repellendus, illo. Facilis dolore porro sunt ab quam nobis libero, saepe iure provident suscipit vero! Ab corrupti quo sit deserunt, iure id esse laborum perferendis, minima officiis totam nulla explicabo.
+       Repudiandae, facere ab? Laboriosam natus quasi dolorem asperiores cupiditate suscipit eaque saepe repellendus ut sapiente, tenetur dicta ipsa minima quibusdam impedit et? Repellat recusandae autem ipsa. Et reiciendis voluptatum fugiat.
+       Repudiandae pariatur corporis quod et voluptatibus harum temporibus beatae atque praesentium labore! Est fugit eos nobis cum totam dolor suscipit. Soluta sit obcaecati debitis doloremque velit odio nemo veritatis fuga.
+       Impedit hic, commodi totam, vero iure nam ex libero deleniti velit, cumque ipsa sit ipsam ut architecto ea? Eius mollitia possimus quaerat. Labore dicta dolorem voluptas neque qui ea quam.
+       Asperiores sint molestiae provident excepturi culpa vero arum sunt a nam quaerat facere deleniti fuga iusto quia neque enim! Neque, eum!
+       <br><br><br><br>
+       <marquee style="color: rgb(255, 0, 242);" behavior="" direction="">नकली वेबसाइब से सावधान रहें। इसी तरह के वेबसाइट देखने पर मेरे सहायता टीम को बतायें <a href="tel:+6299050695">   <i class="fa-solid fa-phone-volume"></i></a></marquee>
+
+       <footer>
+        <h5 style="background-color: rgb(0, 255, 42); width: 100%;">.</h5>
+
+        <h1>
+            <div class="fruit" >
+                <div class="item6"><a href="https://rdcollege.ac.in/web/">College</a></div>
+                <div class="item2"><a href="https://youtube.com/"><i class="fa-brands fa-youtube"></i>youtube</a></div>
+                <div class="item3"><a href="#">GDZ Lab</a></div>
+                <div class="item4"><a href="mailto:gulshankumardariyapur85885@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a></div>
+                <div class="item5"><a href="#">Company</a></div>
+                <div class="item1"><a href="tel:+6299050695"><i class="fa-sharp fa-solid fa-phone-volume"></i> <i class="fa-brands fa-whatsapp"></i>Call or What's app</a>
+                </div>
+                <div class="item7"><a href="https://www.google.com/maps/place/GULSHAN+DIGITAL+ZONE/@25.1608555,85.9283995,21z/data=!4m6!3m5!1s0x39f241d4005bf849:0xc81c1bd024015bb8!8m2!3d25.160834!4d85.928542!16s%2Fg%2F11w48v47kf?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D"><i class="fa-solid fa-location-dot"></i>Location</a></div>
+                <div class="item8"><a href="#">About</a></div>
+                <div class="item9"><a href="#">privacy-policy</a></div>
+                <!-- <div class="item10">lemon</div> -->
+        
+        
+            </div>
+        </h1>
+        
+        </footer>
+        <h5 style="text-align: center;">&copy; 2024 GULSHAN DIGITAL ZONE___________Powred by GZD Bank___________Devloped By:- RS GULSHAN PRAJAPATI</h5>
+    </body>
+</html>
